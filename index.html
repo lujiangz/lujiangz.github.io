@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"></script>
+		<style>
+			* {
+				font-family: monospace;
+				color: rgb(255, 255, 255);
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #000000;
+			}
+
+			#wrapper {
+				width: 100vw;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#content {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+			}
+
+			@media screen and (max-width: 600px) {
+				* {
+					font-size: 22px;
+				}
+			}
+		</style>
+		<title>lujiangz</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="content">
+				<h1><center>Mehmet Sevük</center></h1>
+				<p>
+					<a href = 'https://github.com/lujiangz/' target="_blank">github</a>
+					|
+					<a href = 'https://www.linkedin.com/in/lujiangz/' target="_blank">linkedin</a>
+					|
+					<a href = "mailto:lujiangz@vk.com" target="_blank">mail</a>
+					|
+					<a href = "https://twitter.com/mehmetsevuk" target="_blank">twitter</a>
+					|
+					<a href = "https://t.me/lujiangz" target="_blank">telegram</a>
+					|
+					<a href = "https://lujiangz.me/tools" target="_blank">tools</a>
+				</p>
+			</div>
+		</div>
+		<script>
+			$("#content").css("display", "none");
+			$("#content").fadeIn(2000);
+		</script>
+	</body>
+</html>
