@@ -8,12 +8,17 @@
         crossorigin="anonymous"></script>
     <style>
         * {
-            font-family: monospace;
-            color: rgb(255, 255, 255);
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            color: #ffffff;
             background-color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         #wrapper {
@@ -23,41 +28,87 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         #content {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            text-align: center;
+            max-width: 600px;
         }
 
-        @media screen and (max-width: 600px) {
-            * {
-                font-size: 22px;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .link-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.5rem;
+            overflow-x: auto;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .link-wrapper a,
+        .link-wrapper span {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .link-wrapper a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .link-wrapper a,
+            .link-wrapper span {
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            #wrapper {
+                padding: 10px;
+            }
+
+            .link-wrapper a,
+            .link-wrapper span {
+                font-size: 0.9rem;
             }
         }
     </style>
-    <title>lujiangz</title>
+    <title>Mehmet Sevük - lujiangz</title>
 </head>
 <body>
     <div id="wrapper">
         <div id="content">
             <h1><center>Mehmet Sevük</center></h1>
-            <p>
+            <div class="link-wrapper">
                 <a href='https://github.com/lujiangz/' target="_blank">github</a>
-                |
+                <span>|</span>
                 <a href='https://www.linkedin.com/in/lujiangz/' target="_blank">linkedin</a>
-                |
+                <span>|</span>
                 <a href="mailto:lujiangz@vk.com" target="_blank">mail</a>
-                |
+                <span>|</span>
                 <a href="https://twitter.com/mehmetsevuk" target="_blank">twitter</a>
-                |
+                <span>|</span>
                 <a href="https://t.me/lujiangz" target="_blank">telegram</a>
-                |
+                <span>|</span>
                 <a href="https://lujiangz.github.io/tools" target="_blank">tools</a>
-                |
-                <a href="resume/resume.pdf" target="_blank">resume</a>
-            </p>
+            </div>
         </div>
     </div>
     <script>
