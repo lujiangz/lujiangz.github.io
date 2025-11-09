@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehmet Sevük - Portfolyo</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>MS</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="portfolio-container">
+        <header class="main-header">
+            <button id="theme-toggle" title="Temayı Değiştir">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Mehmet Sevük</h1>
+                    <p class="subtitle">Yazılım Mühendisi (Sistem ve Güvenlik)</p>
+                    <div class="contact-info">
+                        <a href="tel:+905415989511" title="Telefon"><i class="fas fa-phone"></i></a>
+                        <a href="mailto:lujiangz@vk.com" title="E-posta"><i class="fas fa-envelope"></i></a>
+                        <a href="https://linkedin.com/in/lujiangz" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/lujiangz" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#skills">Yeteneklerim</a></li>
+                <li><a href="#projects">Projelerim</a></li>
+                <li><a href="#education">Eğitim</a></li>
+                <li><a href="#certifications">Sertifikalar</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <section id="about">
+                <h2><i class="fas fa-user-tie"></i> Hakkımda</h2>
+                <p>Sistem programlama ve siber güvenlik alanlarında yoğunlaşmış, aynı zamanda yazılım geliştirme süreçlerine bütünsel yaklaşan bir geliştiriciyim. 42 Kocaeli'de edindiğim proje temelli eğitimle C/C++, Python, ağ protokolleri ve düşük seviyeli programlama üzerine kapsamlı tecrübeler kazandım. Tersine mühendislik, güvenlik açığı analizi ve sistem güvenliği üzerine çalışırken, yazılımın sadece güvenliğiyle değil; geliştirme, dağıtım ve sürdürülebilirliğiyle de ilgilenmeye başladım. Bu kapsamda backend geliştirme, DevSecOps gibi alanlara da ilgi duyuyor, kendimi çok yönlü bir teknik altyapı ile geliştirmeyi hedefliyorum.</p>
+            </section>
+
+            <section id="skills">
+                <h2><i class="fas fa-cogs"></i> Teknik Yeteneklerim</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programlama Dilleri</h3>
+                        <ul>
+                            <li><i class="fas fa-code"></i> C / C++</li>
+                            <li><i class="fab fa-python"></i> Python</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Siber Güvenlik</h3>
+                        <ul>
+                            <li><i class="fas fa-shield-alt"></i> Tersine Mühendislik</li>
+                            <li><i class="fas fa-bug"></i> Güvenlik Açığı Analizi</li>
+                            <li><i class="fas fa-user-secret"></i> Sızma Testi (Pentesting)</li>
+                            <li><i class="fas fa-globe"></i> Web Güvenliği (SQLi, XSS, CSRF)</li>
+                            <li><i class="fas fa-network-wired"></i> Ağ Güvenliği</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Araçlar ve Teknolojiler</h3>
+                        <ul>
+                            <li><i class="fab fa-docker"></i> Docker & Docker Compose</li>
+                            <li><i class="fas fa-server"></i> Nginx</li>
+                            <li><i class="fas fa-database"></i> MariaDB</li>
+                            <li><i class="fas fa-microscope"></i> Ghidra, GDB, objdump</li>
+                            <li><i class="fas fa-crosshairs"></i> Nmap, Metasploit, Netcat</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Alan Bilgisi</h3>
+                        <ul>
+                            <li><i class="fas fa-cogs"></i> Sistem Programlama</li>
+                            <li><i class="fas fa-cloud"></i> DevSecOps</li>
+                            <li><i class="fas fa-sitemap"></i> Mikroservis Mimarisi</li>
+                            <li><i class="fas fa-server"></i> Sistem Yönetimi</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2><i class="fas fa-project-diagram"></i> Projelerim</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Rainfall <span class="project-category">Cyber Security</span></h3>
+                        <p>Tersine mühendislik, kod analizi ve buffer overflow, printf injection gibi zafiyetlerin sömürülmesi üzerine odaklanan bir ikili (binary) analiz projesi.</p>
+                        <div class="project-tools"><span>Ghidra</span><span>GDB</span><span>objdump</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Darkly <span class="project-category">Cyber Security</span></h3>
+                        <p>SQL injection, XSS, CSRF gibi yaygın web zafiyetlerinin bulunduğu güvensiz bir web uygulamasının analizi ve istismar edilmesi projesi.</p>
+                        <div class="project-tools"><span>Web Security</span><span>SQLi</span><span>XSS</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Inception Of Things <span class="project-category">System Administration</span></h3>
+                        <p>Docker kullanarak WordPress, MariaDB, Nginx gibi servislerden oluşan bir mikroservis altyapısının tasarlanması ve yönetilmesi. Bu proje sistem yönetimi ve sanallaştırma becerilerini geliştirmiştir.</p>
+                        <div class="project-tools"><span>Docker</span><span>Nginx</span><span>MariaDB</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Boot2Root <span class="project-category">Cyber Security</span></h3>
+                        <p>Bir sanal makinede yetki yükseltme, zayıf servis yapılandırmaları gibi açıkları kullanarak root erişimi elde etmeyi hedefleyen sızma testi projesi.</p>
+                        <div class="project-tools"><span>Nmap</span><span>Metasploit</span><span>John the Ripper</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>ft_linux <span class="project-category">System Administration</span></h3>
+                        <p>Linux From Scratch (LFS) projesinden esinlenerek, temel ve işlevsel bir Linux dağıtımı oluşturma projesi. Bu proje, gelecekteki kernel projeleri için bir temel oluşturur.</p>
+                        <div class="project-tools"><span>Linux</span><span>LFS</span><span>Kernel</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Little Penguin <span class="project-category">System Programming</span></h3>
+                        <p>Eudyptula Challenge'ı temel alan bu proje, bir dizi programlama görevi aracılığıyla Linux kernel geliştirme becerilerini öğretmeyi amaçlamaktadır.</p>
+                        <div class="project-tools"><span>Linux Kernel</span><span>C</span><span>Kernel Programming</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>ft_transcendence <span class="project-category">Web Development</span></h3>
+                        <p>Full-stack bir web uygulaması olarak tasarlanan bu projede, kullanıcıların online Pong oynayabildiği, sohbet edebildiği ve profillerini yönetebildiği bir platform geliştirildi.</p>
+                        <div class="project-tools"><span>Web</span><span>Group & Interpersonal</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>minishell <span class="project-category">System Programming</span></h3>
+                        <p>UNIX kabuğunun temel işlevlerini (komut yürütme, yönlendirmeler, pipe'lar) C dilinde yeniden oluşturma projesi. Sistem programlama ve süreç yönetimi konularında derinlemesine bilgi sağlamıştır.</p>
+                        <div class="project-tools"><span>C</span><span>Unix</span><span>Imperative Programming</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>cub3d <span class="project-category">Graphics</span></h3>
+                        <p>Ray-casting tekniği kullanılarak 90'ların ünlü FPS oyunlarından esinlenen bir 3D labirent oyunu. Grafik programlama ve C ile algoritma geliştirme becerilerini pekiştirmiştir.</p>
+                        <div class="project-tools"><span>C</span><span>Graphics</span><span>Algorithms</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>ft_irc <span class="project-category">Network Programming</span></h3>
+                        <p>C++98 standardında, standart bir IRC istemcisiyle uyumlu, kendi IRC sunucunuzu oluşturma projesi. Ağ programlama ve C++ nesne yönelimli programlama becerilerini birleştirir.</p>
+                        <div class="project-tools"><span>C++</span><span>Network</span><span>Unix</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2><i class="fas fa-graduation-cap"></i> Eğitim</h2>
+                <div class="entry">
+                    <div class="entry-header">
+                        <h3>Abant İzzet Baysal Üniversitesi</h3>
+                        <span class="date">2019 - 2021</span>
+                    </div>
+                    <p>Bilgisayar Programcılığı</p>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <h3>42 Ecole</h3>
+                        <span class="date">2022 - 2024</span>
+                    </div>
+                    <p>Proje Tabanlı Yazılım Mühendisliği Eğitimi. <br><i>Aktif olarak RNCP Seviye 7 (Bilişim Mimarisi Uzmanı - Ağ ve Bilgi Sistemleri) yeterliliği üzerine çalışıyorum.</i></p>
+                </div>
+            </section>
+
+            <section id="certifications">
+                <h2><i class="fas fa-certificate"></i> Sertifikalar</h2>
+                <div class="entry">
+                    <h3>CCNA: Introduction to Networks <span class="cert-issuer">(Cisco, 2023)</span></h3>
+                </div>
+                <div class="entry">
+                    <h3>CCNA: Network Defense <span class="cert-issuer">(Cisco, 2025)</span></h3>
+                </div>
+                <div class="entry">
+                    <h3>CCNA: Introduction to Cybersecurity <span class="cert-issuer">(Cisco, 2025)</span></h3>
+                </div>
+            </section>
+
+            <footer>
+                <p>Mehmet Sevük &copy; 2025</p>
+            </footer>
+        </main>
+    </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.main-nav a');
+        const sections = document.querySelectorAll('main section');
+        const mainContent = document.querySelector('.main-content');
+
+        function showSection(targetId) {
+            // Hide all sections
+            sections.forEach(section => {
+                section.style.display = 'none';
+                section.classList.remove('active');
+            });
+
+            // Show the target section
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                targetSection.classList.add('active');
+            }
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                this.classList.add('active');
+
+                showSection(targetId);
+            });
+        });
+
+        // Show the "About Me" section by default on page load
+        document.querySelector('.main-nav a[href="#about"]').click();
+    });
+
+    // --- Theme Toggler Script ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const moonIcon = themeToggle.querySelector('.fa-moon');
+    const sunIcon = themeToggle.querySelector('.fa-sun');
+    const currentTheme = localStorage.getItem('theme');
+
+    // Function to apply the theme
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-theme');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline-block';
+        } else {
+            document.body.classList.remove('dark-theme');
+            moonIcon.style.display = 'inline-block';
+            sunIcon.style.display = 'none';
+        }
+    }
+
+    // Apply the saved theme on initial load
+    applyTheme(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+        let theme = 'light';
+        if (!document.body.classList.contains('dark-theme')) {
+            theme = 'dark';
+        }
+        
+        // Save the new theme to localStorage
+        localStorage.setItem('theme', theme);
+        
+        // Apply the new theme
+        applyTheme(theme);
+    });
+</script>
+</body>
+</html>
