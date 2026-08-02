@@ -148,6 +148,27 @@
         </div>
     </div>
     <script>
+        function animateTitle(text) {
+            var i = 0;
+            function step() {
+                if (i <= text.length) {
+                    document.title = text.substring(0, i) + "▊";
+                    i++;
+                    setTimeout(step, 110);
+                } else {
+                    var blinks = 0;
+                    var blinkInterval = setInterval(function () {
+                        document.title = (blinks % 2 === 0) ? text : text + "▊";
+                        if (++blinks > 5) {
+                            clearInterval(blinkInterval);
+                            document.title = text;
+                        }
+                    }, 400);
+                }
+            }
+            step();
+        }
+
         (function () {
             var cmd = "whoami";
             var i = 0;
@@ -161,6 +182,7 @@
                     setTimeout(function () {
                         $(".prompt-line").fadeOut(500, function () {
                             $(this).remove();
+                            animateTitle("Mehmet Sevük - lujiangz");
                             $("#name").css("visibility", "visible").hide().fadeIn(600);
                             $("#links").delay(500).animate({ opacity: 1 }, 600);
                         });
