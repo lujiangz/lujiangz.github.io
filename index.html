@@ -7,6 +7,13 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
     <style>
+        :root {
+            --bg: #0a0a0a;
+            --fg: #e8e8e8;
+            --dim: #555555;
+            --accent: #4ade80;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,9 +21,11 @@
         }
 
         body {
-            font-family: 'Courier New', monospace;
-            color: #ffffff;
-            background-color: #000000;
+            font-family: 'Courier New', 'Consolas', monospace;
+            color: var(--fg);
+            background: var(--bg);
+            background-image:
+                radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -36,10 +45,41 @@
             max-width: 600px;
         }
 
+        .prompt-line {
+            font-size: 0.95rem;
+            color: var(--dim);
+            margin-bottom: 1.2rem;
+            text-align: center;
+            min-height: 1.6em;
+        }
+
+        .prompt-line .user { color: var(--dim); }
+        .prompt-line .sep  { color: #3a3a3a; }
+        .prompt-line .path { color: var(--dim); }
+        .prompt-line #typed { color: var(--fg); }
+
+        .cursor {
+            display: inline-block;
+            color: var(--accent);
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
         h1 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             font-weight: bold;
+            letter-spacing: 0.05em;
+            visibility: hidden;
+        }
+
+        h1 .cursor {
+            font-weight: normal;
+            margin-left: 0.15em;
         }
 
         .link-wrapper {
@@ -49,45 +89,37 @@
             overflow-x: auto;
             justify-content: center;
             white-space: nowrap;
+            opacity: 0;
         }
 
         .link-wrapper a,
         .link-wrapper span {
-            color: #ffffff;
+            color: var(--fg);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.25s ease, text-shadow 0.25s ease;
             font-size: 1.1rem;
         }
 
+        .link-wrapper span { color: #3a3a3a; }
+
         .link-wrapper a:hover {
-            color: #ffffff;
-            text-decoration: underline;
+            color: var(--accent);
+            text-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+            text-decoration: none;
         }
 
         @media screen and (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
+            h1 { font-size: 2rem; }
             .link-wrapper a,
-            .link-wrapper span {
-                font-size: 1rem;
-            }
+            .link-wrapper span { font-size: 1rem; }
         }
 
         @media screen and (max-width: 480px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            #wrapper {
-                padding: 10px;
-            }
-
+            h1 { font-size: 1.5rem; }
+            #wrapper { padding: 10px; }
+            .prompt-line { font-size: 0.8rem; }
             .link-wrapper a,
-            .link-wrapper span {
-                font-size: 0.9rem;
-            }
+            .link-wrapper span { font-size: 0.9rem; }
         }
     </style>
     <title>Mehmet Sevük - lujiangz</title>
@@ -95,8 +127,12 @@
 <body>
     <div id="wrapper">
         <div id="content">
-            <h1><center>Mehmet Sevük</center></h1>
-            <div class="link-wrapper">
+            <div class="prompt-line">
+                <span class="user">lujiangz@sec</span><span class="sep">:</span><span class="path">~</span><span class="sep">$</span>
+                <span id="typed"></span><span class="cursor">▊</span>
+            </div>
+            <h1 id="name">Mehmet Sevük<span class="cursor">_</span></h1>
+            <div class="link-wrapper" id="links">
                 <a href='https://github.com/lujiangz/' target="_blank">github</a>
                 <span>|</span>
                 <a href='https://www.linkedin.com/in/lujiangz/' target="_blank">linkedin</a>
@@ -112,8 +148,28 @@
         </div>
     </div>
     <script>
-        $("#content").css("display", "none");
-        $("#content").fadeIn(2000);
+        (function () {
+            var cmd = "whoami";
+            var i = 0;
+            var typed = document.getElementById("typed");
+
+            function typeChar() {
+                if (i < cmd.length) {
+                    typed.textContent += cmd.charAt(i++);
+                    setTimeout(typeChar, 90 + Math.random() * 80);
+                } else {
+                    setTimeout(function () {
+                        $(".prompt-line").fadeOut(500, function () {
+                            $(this).remove();
+                            $("#name").css("visibility", "visible").hide().fadeIn(600);
+                            $("#links").delay(500).animate({ opacity: 1 }, 600);
+                        });
+                    }, 600);
+                }
+            }
+
+            setTimeout(typeChar, 600);
+        })();
     </script>
 </body>
 </html>
